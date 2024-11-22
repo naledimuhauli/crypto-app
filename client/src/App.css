@@ -1,0 +1,116 @@
+.regi {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    overflow: hidden;
+    max-width: 700px;
+    width: 250%;
+}
+
+
+
+.headig {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #6a1b9a;
+    margin-bottom: 10px;
+}
+
+.sign-up {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.create {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+.inputForm input {
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
+}
+
+.inputForm input:focus {
+    outline: none;
+    border-color: #6a1b9a;
+    box-shadow: 0 0 5px rgba(106, 27, 154, 0.3);
+}
+
+.form-check-label {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.registerBtn {
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 45px;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.registerBtn:disabled {
+    background-color: #d4d4d4;
+    cursor: not-allowed;
+}
+
+.registerBtn:hover:not(:disabled) {
+    background-color: #571482;
+}
+
+.text-danger,
+.text-success {
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.account {
+    font-size: 0.85rem;
+    text-align: center;
+    color: #555;
+}
+
+.login a {
+    color: #6a1b9a;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login a:hover {
+    color: #571482;
+}

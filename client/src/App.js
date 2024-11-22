@@ -1,9 +1,17 @@
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Register from './pages/register';
+import Login from './pages/login';
+import Chat from './components/chatWindow';
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/chat" element={<Chat />} />
+      </Routes>
+    </Router>
   );
 }
 
