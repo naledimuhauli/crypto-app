@@ -2,6 +2,7 @@ const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 require('dotenv').config();
+const authRoutes = require('./routes/auth');
 
 const app = express();
 app.use(express.json());
@@ -23,6 +24,9 @@ db.connect((err) => {
     }
     console.log('Database connected successfully');
 });
+
+// Use the routes
+app.use('/auth', authRoutes(db));
 
 
 const PORT = process.env.PORT || 3001;
