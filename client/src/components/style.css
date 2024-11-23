@@ -13,9 +13,15 @@
     padding-top: 7px;
 }
 
-.sidebar h2 {
+.sidebar .heading {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
+    color: black;
+    font-weight: 600;
+}
+
+.sidebar .logo{
+    width: 55px;
 }
 
 .sidebar ul {
@@ -28,9 +34,13 @@
     display: flex;
     align-items: center;
     padding: 0.5rem;
-    font-size: 1rem;
-    color: #333;
+    font-size: 0.9rem;
+    color: #9E9E9E;
     cursor: pointer;
+}
+
+.sidebar .ellipse{
+    padding-left: 15px
 }
 
 .sidebar li svg {
@@ -40,19 +50,14 @@
 
 .sidebar li.active {
     font-weight: bold;
-    color: #333;
+    color: #6154F0;
 }
 
-.sidebar li:hover {
-    color: #0c0c0c;
+.sidebar img{
+    padding-right: 15px;
+    width: 35px;
 }
 
-
-.sidebar .active {
-    border-radius: 7px;
-    padding: 2px 10px;
-    background-color: rgb(219, 218, 218);
-}
 
 .main-chat {
     display: flex;
