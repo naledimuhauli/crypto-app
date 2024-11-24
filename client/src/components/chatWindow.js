@@ -8,6 +8,7 @@ import notification from '../images/notification.png';
 import help from '../images/help.png';
 import userImage from '../images/Avatar.png';
 import arrow from '../images/arrow-down.png';
+import Chart from '../chart';
 
 
 function ChatWindow() {
@@ -45,6 +46,11 @@ function ChatWindow() {
         <img src={arrow} alt='arrow-down' className='arrow'/>
     </div>
     <hr className="navbar-line" />
+
+     {/* Chart Section */}
+     <div className="chart-container mt-4">
+                    <Chart />
+                </div>
 </div>
 
                 </div>
