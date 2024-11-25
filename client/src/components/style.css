@@ -136,13 +136,13 @@
 }
 
 .percent {
-    color: green;
+    color: rgba(30, 203, 79, 1);
     padding-left: 90px;
     font-size: 12px;
 }
 
 .percent1 {
-    color: red;
+    color: rgba(255, 141, 77, 1);
     padding-left: 90px;
     font-size: 12px;
 }

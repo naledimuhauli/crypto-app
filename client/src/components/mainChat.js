@@ -6,6 +6,8 @@ import group2 from '../images/Group2.png';
 import group3 from '../images/Group3.png';
 import group4 from '../images/Group4.png';
 import group5 from '../images/Group5.png';
+import arrowup from '../images/arrow-up.png';
+import arrowdown from '../images/arrowup.png';
 
 function mainChat() {
   return (
@@ -17,6 +19,7 @@ function mainChat() {
             {/* Top Boxes */}
             <div className="col-6 box">
               <img src={group2} alt="group 2" className='box-img' /> <span className='percent'>
+                <img src={arrowup} alt="group 2" />
                 +0.25%
               </span>
               <p className='amount'>$40,291</p>
@@ -24,6 +27,7 @@ function mainChat() {
             </div>
             <div className="col-6 box">
               <img src={group3} alt="group 2" className='box-img' /> <span className='percent'>
+                <img src={arrowup} alt="group 2" />
                 +0.25%
               </span>
               <p className='amount'>$18,291</p>
@@ -34,6 +38,7 @@ function mainChat() {
             {/* Bottom Boxes */}
             <div className="col-6 box">
               <img src={group5} alt="group 2" className='box-img' /> <span className='percent'>
+                <img src={arrowup} alt="group 2" />
                 +0.25%
               </span>
               <p className='amount'>$8,291</p>
@@ -41,6 +46,7 @@ function mainChat() {
             </div>
             <div className="col-6 box">
               <img src={group4} alt="group 2" className='box-img' /> <span className='percent1'>
+                <img src={arrowdown} alt="group 2" />
                 -2,05%
               </span>
               <p className='amount'>$3,291</p>
