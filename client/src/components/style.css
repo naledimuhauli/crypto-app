@@ -172,3 +172,15 @@
     box-shadow: 4px 4px 33px 0px #0000000D;
     margin: 10px;
 }
+
+.percents {
+    color: rgba(30, 203, 79, 1);
+    font-size: 15px;
+    font-weight: 500;
+    padding-top: 10px;
+}
+
+.price {
+    color: black;
+    font-weight: 500;
+}

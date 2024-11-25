@@ -8,6 +8,9 @@ import group4 from '../images/Group4.png';
 import group5 from '../images/Group5.png';
 import arrowup from '../images/arrow-up.png';
 import arrowdown from '../images/arrowup.png';
+import graph1 from '../images/graph1.png';
+import live1 from '../images/live1.png';
+
 
 function mainChat() {
   return (
@@ -72,16 +75,26 @@ function mainChat() {
         <div className="col-md-8 live-market">
           <div className="row">
             <div className="col-3">
-              hello
+              <div className="user-details d-flex align-items-center">
+                <img src={live1} alt="user" className="user-image" />
+                <div className="ms-3">
+                  <p className="name mb-0">Etherenum</p>
+                  <p className="email text-muted coin">ETH / USDT</p>
+                </div>
+              </div>
             </div>
             <div className="col-3">
-              hello
+              <span className="coin">Change</span>
+              <br />
+              <span className='percents'>+14.02%</span>
             </div>
             <div className="col-3">
-              hello
+              <span className="coin">Price</span>
+              <br />
+              <span className='price'>39,785 USD</span>
             </div>
             <div className="col-3">
-              hello
+              <img src={graph1} alt='arrow-down' className='arrow' />
             </div>
           </div>
         </div>
