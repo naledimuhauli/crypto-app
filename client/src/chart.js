@@ -69,7 +69,7 @@ const BTCPriceGraph = () => {
   };
 
   return (
-    <div style={{ width: '100%', maxWidth: '600px', margin: '0 auto' }}>
+    <div style={{ width: '90%', maxWidth: '600px', margin: '0 auto' }}>
       <h1 style={{ fontSize: '20px' }}>BTC Prices</h1>
       {chartData ? <Line data={chartData} options={options} /> : <p>Loading...</p>}
     </div>

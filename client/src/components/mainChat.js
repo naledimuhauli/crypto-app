@@ -65,6 +65,41 @@ function mainChat() {
           </div>
         </div>
       </div>
+
+
+      <div className="row">
+        {/* Left Column - 4 Boxes (2 on top, 2 on bottom) */}
+        <div className="col-md-8 live-market">
+          <div className="row">
+            <div className="col-3">
+              hello
+            </div>
+            <div className="col-3">
+              hello
+            </div>
+            <div className="col-3">
+              hello
+            </div>
+            <div className="col-3">
+              hello
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column - Chart Component */}
+        <div className="col-md-4 trans-box ">
+          <h2>Transactions</h2>
+          <div className="row">
+            <div className="col-6">
+              world
+            </div>
+            <div className="col-6 ">
+              world
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
