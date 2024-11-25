@@ -184,3 +184,21 @@
     color: black;
     font-weight: 500;
 }
+
+.percents1 {
+    color: rgba(255, 141, 77, 1);
+    font-size: 15px;
+    font-weight: 500;
+    padding-top: 10px;
+}
+
+.lives {
+    font-size: 25px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    color: black;
+}
+
+.live-market {
+    padding: 20px;
+}

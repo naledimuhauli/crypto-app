@@ -10,6 +10,11 @@ import arrowup from '../images/arrow-up.png';
 import arrowdown from '../images/arrowup.png';
 import graph1 from '../images/graph1.png';
 import live1 from '../images/live1.png';
+import bitcoin from '../images/bitcoin.png';
+import litecoin from '../images/litecoin.png';
+import cardano from '../images/cardano.png';
+import graph2 from '../images/graph2.png';
+import graph3 from '../images/graph3.png';
 
 
 function mainChat() {
@@ -73,13 +78,14 @@ function mainChat() {
       <div className="row">
         {/* Left Column - 4 Boxes (2 on top, 2 on bottom) */}
         <div className="col-md-8 live-market">
+          <h1 className='lives'>Live Market</h1>
           <div className="row">
             <div className="col-3">
               <div className="user-details d-flex align-items-center">
                 <img src={live1} alt="user" className="user-image" />
                 <div className="ms-3">
                   <p className="name mb-0">Etherenum</p>
-                  <p className="email text-muted coin">ETH / USDT</p>
+                  <p className="email coin">ETH / USDT</p>
                 </div>
               </div>
             </div>
@@ -95,6 +101,78 @@ function mainChat() {
             </div>
             <div className="col-3">
               <img src={graph1} alt='arrow-down' className='arrow' />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-3">
+              <div className="user-details d-flex align-items-center">
+                <img src={bitcoin} alt="user" className="user-image" />
+                <div className="ms-3">
+                  <p className="name mb-0">Bitcoin</p>
+                  <p className="email coin">ETH / USDT</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-3">
+              <span className="coin">Change</span>
+              <br />
+              <span className='percents'>+4.02%</span>
+            </div>
+            <div className="col-3">
+              <span className="coin">Price</span>
+              <br />
+              <span className='price'>21,786 USD</span>
+            </div>
+            <div className="col-3">
+              <img src={graph2} alt='arrow-down' className='arrow' />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-3">
+              <div className="user-details d-flex align-items-center">
+                <img src={litecoin} alt="user" className="user-image" />
+                <div className="ms-3">
+                  <p className="name mb-0">Litecoin</p>
+                  <p className="email coin">ITC / USDT</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-3">
+              <span className="coin">Change</span>
+              <br />
+              <span className='percents1'>-4.02%</span>
+            </div>
+            <div className="col-3">
+              <span className="coin">Price</span>
+              <br />
+              <span className='price'>9,786 USD</span>
+            </div>
+            <div className="col-3">
+              <img src={graph1} alt='arrow-down' className='arrow' />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-3">
+              <div className="user-details d-flex align-items-center">
+                <img src={cardano} alt="user" className="user-image" />
+                <div className="ms-3">
+                  <p className="name mb-0">Cardano</p>
+                  <p className="email coin">ADA / USDT</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-3">
+              <span className="coin">Change</span>
+              <br />
+              <span className='percents'>+0.02%</span>
+            </div>
+            <div className="col-3">
+              <span className="coin">Price</span>
+              <br />
+              <span className='price'>4,786 USD</span>
+            </div>
+            <div className="col-3">
+              <img src={graph3} alt='arrow-down' className='arrow' />
             </div>
           </div>
         </div>
