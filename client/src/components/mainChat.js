@@ -15,6 +15,9 @@ import litecoin from '../images/litecoin.png';
 import cardano from '../images/cardano.png';
 import graph2 from '../images/graph2.png';
 import graph3 from '../images/graph3.png';
+import trans1 from '../images/trans1.png';
+import trans2 from '../images/trans2.png';
+
 
 
 function mainChat() {
@@ -179,13 +182,69 @@ function mainChat() {
 
         {/* Right Column - Chart Component */}
         <div className="col-md-4 trans-box ">
-          <h2>Transactions</h2>
+          <h1 className='lives'>Transactions</h1>
           <div className="row">
             <div className="col-6">
-              world
+              <div className="user-details d-flex align-items-center">
+                <img src={trans2} alt="user" className="user-image" />
+                <div className="ms-3">
+                  <p className="name mb-0">Ethereumm</p>
+                  <p className="email coin">Received</p>
+                </div>
+              </div>
             </div>
             <div className="col-6 ">
-              world
+              <span className="price">$24,102</span>
+              <br />
+              <span className='coin'>Today, 19:30</span>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-6">
+              <div className="user-details d-flex align-items-center">
+                <img src={trans1} alt="user" className="user-image" />
+                <div className="ms-3">
+                  <p className="name mb-0">Bitcoin</p>
+                  <p className="email coin">Buy</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-6 ">
+              <span className="price">$4,157</span>
+              <br />
+              <span className='coin'>Today, 14:32</span>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-6">
+              <div className="user-details d-flex align-items-center">
+                <img src={trans1} alt="user" className="user-image" />
+                <div className="ms-3">
+                  <p className="name mb-0">Bitcoin</p>
+                  <p className="email coin">Buy</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-6 ">
+              <span className="price">$64,784</span>
+              <br />
+              <span className='coin'>Today, 13:50</span>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-6">
+              <div className="user-details d-flex align-items-center">
+                <img src={trans1} alt="user" className="user-image" />
+                <div className="ms-3">
+                  <p className="name mb-0">Litecoin</p>
+                  <p className="email coin">Buy</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-6 ">
+              <span className="price">$14,265</span>
+              <br />
+              <span className='coin'>Today, 19:38</span>
             </div>
           </div>
         </div>
