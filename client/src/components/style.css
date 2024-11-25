@@ -119,3 +119,56 @@
     height: 100%;
     /* Adjust height as needed */
 }
+
+.box {
+    border: 1px solid white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 33px 0px #0000000D;
+    width: 240px;
+    height: 140px;
+    margin: 10px;
+}
+
+.box-img {
+    width: 35px;
+    height: 35px;
+}
+
+.percent {
+    color: green;
+    padding-left: 90px;
+    font-size: 12px;
+}
+
+.percent1 {
+    color: red;
+    padding-left: 90px;
+    font-size: 12px;
+}
+
+.amount {
+    font-size: 23px;
+    font-weight: 600;
+    color: black;
+    padding-top: 5px;
+    font-family: Poppins;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.coin {
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 15px;
+    color: #9E9E9E;
+
+}
+
+.chart-box {
+    border: 1px solid white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 33px 0px #0000000D;
+    margin: 10px;
+}

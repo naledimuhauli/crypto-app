@@ -2,6 +2,10 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 import Chart from '../chart.js';
+import group2 from '../images/Group2.png';
+import group3 from '../images/Group3.png';
+import group4 from '../images/Group4.png';
+import group5 from '../images/Group5.png';
 
 function mainChat() {
   return (
@@ -11,20 +15,44 @@ function mainChat() {
         <div className="col-md-6">
           <div className="row">
             {/* Top Boxes */}
-            <div className="col-6">hello</div>
-            <div className="col-6">world</div>
+            <div className="col-6 box">
+              <img src={group2} alt="group 2" className='box-img' /> <span className='percent'>
+                +0.25%
+              </span>
+              <p className='amount'>$40,291</p>
+              <div className="coin">Bitcoin - BTC</div>
+            </div>
+            <div className="col-6 box">
+              <img src={group3} alt="group 2" className='box-img' /> <span className='percent'>
+                +0.25%
+              </span>
+              <p className='amount'>$18,291</p>
+              <div className="coin">Etherum - ETH</div>
+            </div>
           </div>
           <div className="row">
             {/* Bottom Boxes */}
-            <div className="col-6">siphokazi</div>
-            <div className="col-6">muhauli</div>
+            <div className="col-6 box">
+              <img src={group5} alt="group 2" className='box-img' /> <span className='percent'>
+                +0.25%
+              </span>
+              <p className='amount'>$8,291</p>
+              <div className="coin">Litcoin - LTL</div>
+            </div>
+            <div className="col-6 box">
+              <img src={group4} alt="group 2" className='box-img' /> <span className='percent1'>
+                -2,05%
+              </span>
+              <p className='amount'>$3,291</p>
+              <div className="coin">Cardona - ADA</div>
+            </div>
           </div>
         </div>
 
         {/* Right Column - Chart Component */}
         <div className="col-md-6">
           <div className="row">
-            <div className="col-12">
+            <div className="col-12 chart-box">
               <Chart className="chart-container" />
 
             </div>

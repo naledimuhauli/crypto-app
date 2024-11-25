@@ -30,10 +30,10 @@ const BTCPriceGraph = () => {
             {
               label: 'BTC Price (USD)',
               data: dataPoints,
-              borderColor: '#f39c12', // Orange line
+              borderColor: ' #6154F0',
               borderWidth: 2,
               fill: false,
-              tension: 0.4, // Smooth curve
+              tension: 0.5, // Smooth curve
             },
           ],
         });
@@ -58,20 +58,19 @@ const BTCPriceGraph = () => {
       x: {
         title: {
           display: true,
-          text: 'Date',
         },
       },
       y: {
         title: {
           display: true,
-          text: 'Price (USD)',
         },
       },
     },
   };
 
   return (
-    <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
+    <div style={{ width: '100%', maxWidth: '600px', margin: '0 auto' }}>
+      <h1 style={{ fontSize: '20px' }}>BTC Prices</h1>
       {chartData ? <Line data={chartData} options={options} /> : <p>Loading...</p>}
     </div>
   );
