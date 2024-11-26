@@ -201,8 +201,11 @@
 
 .live-market {
     padding: 20px;
+    max-width: 700px;
 }
 
 .trans-box {
     padding: 20px;
+    max-width: 450px;
+    margin-left: 30px;
 }
