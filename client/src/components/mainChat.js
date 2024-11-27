@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 import Chart from '../chart.js';
@@ -13,14 +14,59 @@ import live1 from '../images/live1.png';
 import bitcoin from '../images/bitcoin.png';
 import litecoin from '../images/litecoin.png';
 import cardano from '../images/cardano.png';
-import graph2 from '../images/graph2.png';
+// import graph2 from '../images/graph2.png';
 import graph3 from '../images/graph3.png';
 import trans1 from '../images/trans1.png';
 import trans2 from '../images/trans2.png';
+import { fetchBTCData, prepareChartData } from '../api.js'; // Import API functions
 
+function MainChat() {
+  const [liveData, setLiveData] = useState([]);
+  const [chartData, setChartData] = useState({ labels: [], dataPoints: [] });
 
+  // Fetch live market data
+  const fetchLiveMarketData = async () => {
+    try {
+      const response = await Promise.all([
+        axios.get('https://api.coingecko.com/api/v3/simple/price', {
+          params: { ids: 'bitcoin', vs_currencies: 'usd', include_24hr_change: 'true' },
+        }),
+        axios.get('https://api.coingecko.com/api/v3/simple/price', {
+          params: { ids: 'ethereum', vs_currencies: 'usd', include_24hr_change: 'true' },
+        }),
+        axios.get('https://api.coingecko.com/api/v3/simple/price', {
+          params: { ids: 'litecoin', vs_currencies: 'usd', include_24hr_change: 'true' },
+        }),
+        axios.get('https://api.coingecko.com/api/v3/simple/price', {
+          params: { ids: 'cardano', vs_currencies: 'usd', include_24hr_change: 'true' },
+        }),
+      ]);
 
-function mainChat() {
+      const formattedData = [
+        { name: 'Bitcoin', id: 'ETH', ...response[0].data.bitcoin },
+        { name: 'Ethereum', id: 'BTC', ...response[1].data.ethereum },
+        { name: 'Litecoin', id: 'ICT', ...response[2].data.litecoin },
+        { name: 'Cardano', id: 'ADA', ...response[3].data.cardano },
+      ];
+
+      setLiveData(formattedData);
+    } catch (error) {
+      console.error('Error fetching live market data:', error);
+    }
+  };
+
+  // Fetch BTC data for the chart
+  const fetchChartData = async () => {
+    const prices = await fetchBTCData();
+    const data = prepareChartData(prices);
+    setChartData(data);
+  };
+
+  useEffect(() => {
+    fetchLiveMarketData();
+    fetchChartData();
+  }, []);
+
   return (
     <div className='container-fluid'>
       <div className="row">
@@ -77,110 +123,52 @@ function mainChat() {
         </div>
       </div>
 
-
       <div className="row">
-        {/* Left Column - 4 Boxes (2 on top, 2 on bottom) */}
+        {/* Live Market */}
         <div className="col-md-8 live-market">
           <h1 className='lives'>Live Market</h1>
-          <div className="row">
-            <div className="col-3">
-              <div className="user-details d-flex align-items-center">
-                <img src={live1} alt="user" className="user-image" />
-                <div className="ms-3">
-                  <p className="name mb-0">Etherenum</p>
-                  <p className="email coin">ETH / USDT</p>
+          {liveData.map((coin, index) => (
+            <div className="row" key={index}>
+              <div className="col-3">
+                <div className="user-details d-flex align-items-center">
+                  <img
+                    src={
+                      coin.id === 'BTC'
+                        ? bitcoin
+                        : coin.id === 'ETH'
+                          ? live1
+                          : coin.id === 'ICT'
+                            ? litecoin
+                            : cardano
+                    }
+                    alt={coin.name}
+                    className="user-image"
+                  />
+                  <div className="ms-3">
+                    <p className="name mb-0">{coin.name}</p>
+                    <p className="email coin">{coin.id} / USDT</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-3">
-              <span className="coin">Change</span>
-              <br />
-              <span className='percents'>+14.02%</span>
-            </div>
-            <div className="col-3">
-              <span className="coin">Price</span>
-              <br />
-              <span className='price'>39,785 USD</span>
-            </div>
-            <div className="col-3">
-              <img src={graph1} alt='arrow-down' className='arrow' />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-3">
-              <div className="user-details d-flex align-items-center">
-                <img src={bitcoin} alt="user" className="user-image" />
-                <div className="ms-3">
-                  <p className="name mb-0">Bitcoin</p>
-                  <p className="email coin">ETH / USDT</p>
-                </div>
+              <div className="col-3">
+                <span className="coin">Change</span>
+                <br />
+                <span className={`percents ${coin.usd_24h_change < 0 ? 'percents1' : ''}`}>
+                  {coin.usd_24h_change.toFixed(2)}%
+                </span>
+              </div>
+              <div className="col-3">
+                <span className="coin">Price</span>
+                <br />
+                <span className='price'>{coin.usd.toLocaleString()} USD</span>
+              </div>
+              <div className="col-3">
+                <img src={coin.usd_24h_change < 0 ? graph3 : graph1} alt="graph" className='arrow' />
               </div>
             </div>
-            <div className="col-3">
-              <span className="coin">Change</span>
-              <br />
-              <span className='percents'>+4.02%</span>
-            </div>
-            <div className="col-3">
-              <span className="coin">Price</span>
-              <br />
-              <span className='price'>21,786 USD</span>
-            </div>
-            <div className="col-3">
-              <img src={graph2} alt='arrow-down' className='arrow' />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-3">
-              <div className="user-details d-flex align-items-center">
-                <img src={litecoin} alt="user" className="user-image" />
-                <div className="ms-3">
-                  <p className="name mb-0">Litecoin</p>
-                  <p className="email coin">ITC / USDT</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-3">
-              <span className="coin">Change</span>
-              <br />
-              <span className='percents1'>-4.02%</span>
-            </div>
-            <div className="col-3">
-              <span className="coin">Price</span>
-              <br />
-              <span className='price'>9,786 USD</span>
-            </div>
-            <div className="col-3">
-              <img src={graph1} alt='arrow-down' className='arrow' />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-3">
-              <div className="user-details d-flex align-items-center">
-                <img src={cardano} alt="user" className="user-image" />
-                <div className="ms-3">
-                  <p className="name mb-0">Cardano</p>
-                  <p className="email coin">ADA / USDT</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-3">
-              <span className="coin">Change</span>
-              <br />
-              <span className='percents'>+0.02%</span>
-            </div>
-            <div className="col-3">
-              <span className="coin">Price</span>
-              <br />
-              <span className='price'>4,786 USD</span>
-            </div>
-            <div className="col-3">
-              <img src={graph3} alt='arrow-down' className='arrow' />
-            </div>
-          </div>
+          ))}
         </div>
 
-        {/* Right Column - Chart Component */}
         <div className="col-md-4 trans-box ">
           <h1 className='lives'>Transactions</h1>
           <div className="row">
@@ -249,9 +237,8 @@ function mainChat() {
           </div>
         </div>
       </div>
-
     </div>
   );
 }
 
-export default mainChat;
+export default MainChat;

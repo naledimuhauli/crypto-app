@@ -44,7 +44,7 @@ function MainChat() {
 
             const formattedData = [
                 { name: 'Bitcoin', id: 'ETH', ...response[0].data.bitcoin },
-                { name: 'Ethereum', id: 'ETH', ...response[1].data.ethereum },
+                { name: 'Ethereum', id: 'BTC', ...response[1].data.ethereum },
                 { name: 'Litecoin', id: 'ICT', ...response[2].data.litecoin },
                 { name: 'Cardano', id: 'ADA', ...response[3].data.cardano },
             ];
@@ -135,7 +135,7 @@ function MainChat() {
                                         src={
                                             coin.id === 'ETH'
                                                 ? bitcoin
-                                                : coin.id === 'ETH'
+                                                : coin.id === 'BTC'
                                                     ? live1
                                                     : coin.id === 'ICT'
                                                         ? litecoin

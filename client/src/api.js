@@ -33,7 +33,7 @@ export const prepareChartData = (prices) => {
 
     // Create or update the group for this month
     if (!acc[monthKey]) {
-      acc[monthKey] = { total: 0, count: 0, monthName: date.toLocaleString('default', { month: 'short' }) }; // Get full month name
+      acc[monthKey] = { total: 0, count: 0, monthName: date.toLocaleString('default', { month: 'short' }) }; // Get month name
     }
 
     acc[monthKey].total += price;
@@ -51,7 +51,7 @@ export const prepareChartData = (prices) => {
       const { total, count, monthName } = groupedData[monthKey];
       const averagePrice = total / count;
 
-      labels.push(monthName); // Use full month name (e.g., 'January', 'February', ...)
+      labels.push(monthName); // Use full month name 
       dataPoints.push(averagePrice); // Push average price for the month
     }
   }
